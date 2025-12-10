@@ -44,7 +44,7 @@ public class HomePageApiTest extends BaseTest {
                 }
         }
 
-        @Test(description = "Verify feed filter save", priority = 1)
+        @Test(description = "Verify feed filter save", priority = 1, groups = "buyerapp")
         @Story("Feed Filters")
         @Severity(SeverityLevel.CRITICAL)
         public void testFeedFilterSave() {
@@ -91,7 +91,7 @@ public class HomePageApiTest extends BaseTest {
                 }
         }
 
-        @Test(description = "Verify feed filters get", priority = 2)
+        @Test(description = "Verify feed filters get", priority = 2, groups = "buyerapp")
         @Story("Feed Filters")
         @Severity(SeverityLevel.CRITICAL)
         public void testFeedFiltersGet() {
@@ -153,7 +153,7 @@ public class HomePageApiTest extends BaseTest {
                 }
         }
 
-        @Test(description = "Verify feed banners", priority = 3)
+        @Test(description = "Verify feed banners", priority = 3, groups = "buyerapp")
         @Story("Feed Banners")
         @Severity(SeverityLevel.NORMAL)
         public void testFeedBanners() {
@@ -203,7 +203,7 @@ public class HomePageApiTest extends BaseTest {
                 }
         }
 
-        @Test(description = "Verify featured collection", priority = 4)
+        @Test(description = "Verify featured collection", priority = 4, groups = "buyerapp")
         @Story("Featured Collection")
         @Severity(SeverityLevel.NORMAL)
         public void testFeaturedCollection() {
@@ -235,7 +235,7 @@ public class HomePageApiTest extends BaseTest {
                 assertThat("data should be present", jsonPath.get("data"), notNullValue());
         }
 
-        @Test(description = "Verify catalog feed with pagination", priority = 5)
+        @Test(description = "Verify catalog feed with pagination", priority = 5, groups = "buyerapp")
         @Story("Catalog Feed")
         @Severity(SeverityLevel.CRITICAL)
         public void testCatalogFeed() {
@@ -268,7 +268,7 @@ public class HomePageApiTest extends BaseTest {
                                 response.getContentType(), containsString("application/json"));
         }
 
-        @Test(description = "Verify trending items", priority = 6)
+        @Test(description = "Verify trending items", priority = 6, groups = "buyerapp")
         @Story("Trending")
         @Severity(SeverityLevel.NORMAL)
         public void testTrendingItems() {
@@ -317,7 +317,7 @@ public class HomePageApiTest extends BaseTest {
                 }
         }
 
-        @Test(description = "Verify new this week items", priority = 7)
+        @Test(description = "Verify new this week items", priority = 7, groups = "buyerapp")
         @Story("New This Week")
         @Severity(SeverityLevel.NORMAL)
         public void testNewThisWeek() {

@@ -26,7 +26,7 @@
         </classes>
     </test>
 
-    <test name="Buyer App Profile & Config Tests" preserve-order="true">
+    <test name="Buyer App Profile &amp; Config Tests" preserve-order="true">
         <classes>
             <class name="com.automation.tests.buyerapp.ProfileAndConfigApiTest"/>
         </classes>

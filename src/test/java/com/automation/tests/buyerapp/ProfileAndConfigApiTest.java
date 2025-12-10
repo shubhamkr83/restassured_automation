@@ -37,7 +37,7 @@ public class ProfileAndConfigApiTest extends BaseTest {
         }
     }
 
-    @Test(description = "Verify auth validate endpoint", priority = 1)
+    @Test(description = "Verify auth validate endpoint", priority = 1, groups = "buyerapp")
     @Story("Auth Validate")
     @Severity(SeverityLevel.CRITICAL)
     public void testAuthValidate() {
@@ -74,7 +74,7 @@ public class ProfileAndConfigApiTest extends BaseTest {
         assertThat("updatedAt should be string", jsonPath.get("data.updatedAt"), instanceOf(String.class));
     }
 
-    @Test(description = "Verify location object in auth validate", dependsOnMethods = "testAuthValidate")
+    @Test(description = "Verify location object in auth validate", dependsOnMethods = "testAuthValidate", groups = "buyerapp")
     @Story("Auth Validate")
     @Severity(SeverityLevel.NORMAL)
     public void testAuthValidateLocation() {
@@ -104,7 +104,7 @@ public class ProfileAndConfigApiTest extends BaseTest {
         }
     }
 
-    @Test(description = "Verify boolean fields in auth validate", dependsOnMethods = "testAuthValidate")
+    @Test(description = "Verify boolean fields in auth validate", dependsOnMethods = "testAuthValidate", groups = "buyerapp")
     @Story("Auth Validate")
     @Severity(SeverityLevel.NORMAL)
     public void testAuthValidateBooleanFields() {
@@ -131,7 +131,7 @@ public class ProfileAndConfigApiTest extends BaseTest {
         }
     }
 
-    @Test(description = "Verify array fields in auth validate", dependsOnMethods = "testAuthValidate")
+    @Test(description = "Verify array fields in auth validate", dependsOnMethods = "testAuthValidate", groups = "buyerapp")
     @Story("Auth Validate")
     @Severity(SeverityLevel.NORMAL)
     public void testAuthValidateArrayFields() {
@@ -158,7 +158,7 @@ public class ProfileAndConfigApiTest extends BaseTest {
         }
     }
 
-    @Test(description = "Verify app update configuration", priority = 2)
+    @Test(description = "Verify app update configuration", priority = 2, groups = "buyerapp")
     @Story("App Config")
     @Severity(SeverityLevel.NORMAL)
     public void testAppUpdate() {
@@ -202,7 +202,7 @@ public class ProfileAndConfigApiTest extends BaseTest {
                 jsonPath.getInt("data.minVersionToUpdate"), greaterThanOrEqualTo(0));
     }
 
-    @Test(description = "Verify suitable for configuration", priority = 3)
+    @Test(description = "Verify suitable for configuration", priority = 3, groups = "buyerapp")
     @Story("App Config")
     @Severity(SeverityLevel.NORMAL)
     public void testSuitableForConfig() {

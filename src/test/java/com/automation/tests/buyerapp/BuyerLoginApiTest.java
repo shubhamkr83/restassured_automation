@@ -31,7 +31,7 @@ public class BuyerLoginApiTest extends BaseTest {
         logger.info("Buyer App Base URL: {}", buyerAppBaseUrl);
     }
 
-    @Test(description = "Verify buyer app login with valid credentials", priority = 1)
+    @Test(description = "Verify buyer app login with valid credentials", priority = 1, groups = "buyerapp")
     @Story("Buyer Login")
     @Severity(SeverityLevel.BLOCKER)
     public void testBuyerAppLogin() {
@@ -84,7 +84,7 @@ public class BuyerLoginApiTest extends BaseTest {
         logger.info("Buyer App login successful. Token stored: {}", buyerAppToken.substring(0, 20) + "...");
     }
 
-    @Test(description = "Verify all required fields in login response", dependsOnMethods = "testBuyerAppLogin")
+    @Test(description = "Verify all required fields in login response", dependsOnMethods = "testBuyerAppLogin", groups = "buyerapp")
     @Story("Buyer Login")
     @Severity(SeverityLevel.CRITICAL)
     public void testLoginResponseFields() {
@@ -114,7 +114,7 @@ public class BuyerLoginApiTest extends BaseTest {
         assertThat("Updated at should be present", data.getUpdatedAt(), notNullValue());
     }
 
-    @Test(description = "Verify location object in login response", dependsOnMethods = "testBuyerAppLogin")
+    @Test(description = "Verify location object in login response", dependsOnMethods = "testBuyerAppLogin", groups = "buyerapp")
     @Story("Buyer Login")
     @Severity(SeverityLevel.NORMAL)
     public void testLoginResponseLocation() {
@@ -137,7 +137,7 @@ public class BuyerLoginApiTest extends BaseTest {
                 instanceOf(BuyerLoginResponse.Location.class));
     }
 
-    @Test(description = "Verify category is non-empty array of strings", dependsOnMethods = "testBuyerAppLogin")
+    @Test(description = "Verify category is non-empty array of strings", dependsOnMethods = "testBuyerAppLogin", groups = "buyerapp")
     @Story("Buyer Login")
     @Severity(SeverityLevel.NORMAL)
     public void testLoginResponseCategory() {
@@ -163,7 +163,7 @@ public class BuyerLoginApiTest extends BaseTest {
         });
     }
 
-    @Test(description = "Verify Content-Type header is present")
+    @Test(description = "Verify Content-Type header is present", groups = "buyerapp")
     @Story("Buyer Login")
     @Severity(SeverityLevel.MINOR)
     public void testLoginResponseHeaders() {

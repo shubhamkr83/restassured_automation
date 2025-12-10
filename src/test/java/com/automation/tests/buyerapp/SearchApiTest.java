@@ -43,7 +43,7 @@ public class SearchApiTest extends BaseTest {
         }
     }
 
-    @Test(description = "Verify search product with query and pagination", priority = 1)
+    @Test(description = "Verify search product with query and pagination", priority = 1, groups = "buyerapp")
     @Story("Product Search")
     @Severity(SeverityLevel.CRITICAL)
     public void testSearchProduct() {
@@ -131,7 +131,7 @@ public class SearchApiTest extends BaseTest {
         logger.info("Search product test completed with query: {}", searchQuery);
     }
 
-    @Test(description = "Verify recommended chips/buckets for search", priority = 2, dependsOnMethods = "testSearchProduct")
+    @Test(description = "Verify recommended chips/buckets for search", priority = 2, dependsOnMethods = "testSearchProduct", groups = "buyerapp")
     @Story("Recommended Chips")
     @Severity(SeverityLevel.CRITICAL)
     public void testSearchRecommendedChips() {
@@ -239,7 +239,7 @@ public class SearchApiTest extends BaseTest {
         logger.info("Recommended chips test completed successfully");
     }
 
-    @Test(description = "Verify search with recommended chip/product filter", priority = 3, dependsOnMethods = "testSearchRecommendedChips")
+    @Test(description = "Verify search with recommended chip/product filter", priority = 3, dependsOnMethods = "testSearchRecommendedChips", groups = "buyerapp")
     @Story("Recommended Chip Select")
     @Severity(SeverityLevel.NORMAL)
     public void testSearchWithRecommendChipSelect() {
@@ -313,7 +313,7 @@ public class SearchApiTest extends BaseTest {
         logger.info("Recommend chip select test completed with product filter: {}", productId);
     }
 
-    @Test(description = "Verify search response headers", priority = 4)
+    @Test(description = "Verify search response headers", priority = 4, groups = "buyerapp")
     @Story("Product Search")
     @Severity(SeverityLevel.MINOR)
     public void testSearchResponseHeaders() {

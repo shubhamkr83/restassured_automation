@@ -39,7 +39,7 @@ public class CollectionsApiTest extends BaseTest {
         }
     }
 
-    @Test(description = "Verify get all collections for Saree", priority = 1)
+    @Test(description = "Verify get all collections for Saree", priority = 1, groups = "buyerapp")
     @Story("All Collections")
     @Severity(SeverityLevel.CRITICAL)
     public void testGetAllCollectionsSaree() {
@@ -84,7 +84,7 @@ public class CollectionsApiTest extends BaseTest {
         }
     }
 
-    @Test(description = "Verify get all collections for Readymade", priority = 2)
+    @Test(description = "Verify get all collections for Readymade", priority = 2, groups = "buyerapp")
     @Story("All Collections")
     @Severity(SeverityLevel.NORMAL)
     public void testGetAllCollectionsReadymade() {
@@ -116,7 +116,7 @@ public class CollectionsApiTest extends BaseTest {
         assertThat("data.result should be array", jsonPath.getList("data.result"), notNullValue());
     }
 
-    @Test(description = "Verify get top collections", priority = 3)
+    @Test(description = "Verify get top collections", priority = 3, groups = "buyerapp")
     @Story("Top Collections")
     @Severity(SeverityLevel.NORMAL)
     public void testGetTopCollections() {
@@ -149,7 +149,7 @@ public class CollectionsApiTest extends BaseTest {
         assertThat("Response should have data", jsonPath.get("data"), notNullValue());
     }
 
-    @Test(description = "Verify collection count is reasonable", dependsOnMethods = "testGetAllCollectionsSaree")
+    @Test(description = "Verify collection count is reasonable", dependsOnMethods = "testGetAllCollectionsSaree", groups = "buyerapp")
     @Story("All Collections")
     @Severity(SeverityLevel.NORMAL)
     public void testCollectionCount() {
@@ -176,7 +176,7 @@ public class CollectionsApiTest extends BaseTest {
         logger.info("Total collections found: {}", collectionCount);
     }
 
-    @Test(description = "Verify each collection has required fields", dependsOnMethods = "testGetAllCollectionsSaree")
+    @Test(description = "Verify each collection has required fields", dependsOnMethods = "testGetAllCollectionsSaree", groups = "buyerapp")
     @Story("All Collections")
     @Severity(SeverityLevel.NORMAL)
     public void testCollectionFields() {
@@ -210,7 +210,7 @@ public class CollectionsApiTest extends BaseTest {
         }
     }
 
-    @Test(description = "Verify response headers are correct")
+    @Test(description = "Verify response headers are correct", groups = "buyerapp")
     @Story("All Collections")
     @Severity(SeverityLevel.MINOR)
     public void testCollectionResponseHeaders() {
